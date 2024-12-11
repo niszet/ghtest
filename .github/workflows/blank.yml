@@ -11,6 +11,8 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write
+
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -45,3 +47,6 @@ jobs:
           commit-message: Update files after processing
           title: Update files after processing
           body: This PR includes changes made by the process.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+
