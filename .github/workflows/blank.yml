@@ -37,3 +37,11 @@ jobs:
 
       - run: Rscript hoge.R
       - run: Rscript xls2csv.R
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: process-results
+          commit-message: Update files after processing
+          title: Update files after processing
+          body: This PR includes changes made by the process.
